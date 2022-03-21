@@ -19,7 +19,7 @@ Feature: User should be able to login using correct credentials
 
 
 
-  @wip
+
   Scenario: User should be able to see all 12 months in
 
     When User enters below credentials

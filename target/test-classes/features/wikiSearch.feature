@@ -31,3 +31,9 @@ Feature: Wikipedia Search functionality and verification
       | Marie Curie       | Marie Curie       | Marie Curie        |
       | Lady Gaga         | Lady Gaga         | Lady Gaga          |
       | Kate Winslet      | Kate Winslet      | Kate Winslet       |
+
+
+
+     #to beautify the pipes above
+      #mac: command + option + L
+      #windows: control + alt + L
