@@ -2,7 +2,11 @@ package com.cydeo.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -59,6 +63,26 @@ for given duration
     //this method verify if the current URL contains expected value
     public static void verifyURLContains(String expectedInTitle){
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInTitle));
+    }
+
+
+
+    public static List<String> dropdownOptionsAsString (WebElement dropdownElement){
+
+
+        Select select = new Select(dropdownElement);
+
+        //List of all ACTUAL month <options> as a web element
+        List<WebElement> actulOptionsAsWebElement =select.getOptions();
+
+
+        //List of all ACTUAL month <options> as a string
+        List<String> actulOptionsAsString = new ArrayList<>();
+
+        for (WebElement each : actulOptionsAsWebElement) {
+            actulOptionsAsString.add(each.getText());
+        }
+        return actulOptionsAsString;
     }
 
 }
