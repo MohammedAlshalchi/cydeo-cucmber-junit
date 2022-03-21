@@ -56,5 +56,9 @@ for given duration
 
     }
 
+    //this method verify if the current URL contains expected value
+    public static void verifyURLContains(String expectedInTitle){
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedInTitle));
+    }
 
 }
