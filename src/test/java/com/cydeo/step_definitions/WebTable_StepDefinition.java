@@ -4,6 +4,7 @@ import com.cydeo.pages.WebTableLoginPage;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -55,7 +56,6 @@ public class WebTable_StepDefinition {
 
 
     }
-
 
 
 }
