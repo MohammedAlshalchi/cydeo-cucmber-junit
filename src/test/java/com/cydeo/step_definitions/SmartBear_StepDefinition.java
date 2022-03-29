@@ -3,10 +3,12 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.SmartBearPage;
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.Map;
@@ -64,6 +66,65 @@ String url = "http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrde
        Assert.assertTrue(smartBearPage.johnWick.isDisplayed());
     }
 
+// We start task#5 SCENARIO OUTLINE PRACTICE
 
+    @When("User fills out the form as followed from the table below:")
+    public void user_fills_out_the_form_as_followed_from_the_table_below() {
+      BrowserUtils.sleep(2);
+      smartBearPage.orderButton.click();
+    }
+    @When("User selects {string} from product dropdown")
+    public void user_selects_from_product_dropdown(String string) {
+Select select = new Select(smartBearPage.albumDropdown);
+select.selectByVisibleText(string);
+    }
+    @When("User enters {string} to quantity")
+    public void user_enters_to_quantity(String string) {
+        smartBearPage.quantitySearch.clear();
+      smartBearPage.quantitySearch.sendKeys(string);
+
+    }
+    @When("User enters {string} to costumer name")
+    public void user_enters_to_costumer_name(String string) {
+smartBearPage.customerNameSearch.sendKeys(string);
+    }
+    @When("User enters {string} to street")
+    public void user_enters_to_street(String string) {
+smartBearPage.streetSearch.sendKeys(string);
+    }
+    @When("User enters {string} to city")
+    public void user_enters_to_city(String string) {
+smartBearPage.citySearch.sendKeys(string);
+    }
+    @When("User enters {string} to state")
+    public void user_enters_to_state(String string) {
+smartBearPage.stateSearch.sendKeys(string);
+    }
+    @When("User enters {string} to zip")
+    public void user_enters_to_zip(String string) {
+smartBearPage.zipSearch.sendKeys(string);
+    }
+    @When("User selects {string} as card type")
+    public void user_selects_as_card_type(String string) {
+smartBearPage.cardType.sendKeys(string);
+    }
+    @When("User enters {string} to card number")
+    public void user_enters_to_card_number(String string) {
+smartBearPage.cardNumberSearch.sendKeys(string);
+    }
+    @When("User enters {string} to expiration date")
+    public void user_enters_to_expiration_date(String string) {
+smartBearPage.expireDateSearch.sendKeys(string);
+    }
+    @Then("User verifies {string} is in the list")
+    public void user_verifies_is_in_the_list(String string) {
+        for (WebElement each : smartBearPage.viewAllOrders2) {
+            if (each.equals(string)) {
+                Assert.assertTrue("Name doesn't match", each.isDisplayed());
+            }
+           System.out.println(smartBearPage.viewAllOrders2);
+        }
+
+    }
 
 }

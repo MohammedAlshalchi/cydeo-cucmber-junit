@@ -19,7 +19,7 @@ Feature: User should be able to login using correct credentials
 
 
 
-  @mohammed
+
   Scenario: User should be able to see all 12 months in months dropdown
 
     When User enters below credentials
